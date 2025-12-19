@@ -1,9 +1,28 @@
+'use client';
 import Image from "next/image";
+import { useState } from 'react';
+
 
 export default function Home() {
+  const [aboutText, setAboutText] = useState("hello")
+  const [aboutLogo, setAboutLogo] = useState("/favicon.ico")
+
+
+  function changeAbout(icon:string){
+    const dict: {[key: string]: string[]} = {
+      java: ["Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before.","/javalogo.svg"],
+      python: ["Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax.", "/pythonlogo.svg"]
+    }
+
+    const dictResult:string[] = dict[icon];
+    setAboutText(dictResult[0])
+    setAboutLogo(dictResult[1])
+  }
+
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col gap-6 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         <div className="flex flex-row gap-2 items-center">
           <Image
           className="dark:invert  rounded-4xl "
@@ -20,7 +39,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
 
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I'm Matt. I'm a computer scientist with a passion for problem solving. I'm always learning new skills to help me work through any obstacles I face.
+            I'm Matt. I'm a computer scientist with a passion for problem solving. I'm always learning new skills to help me work through any obstacle I face.
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
@@ -59,29 +78,49 @@ export default function Home() {
         </div>
 
         <div className="flex flex-row gap-4">
-          <div>
+          <div className="hover:bg-black/[.04]  p-2 rounded-full "
+               onClick={()=>changeAbout("java")}>
             <Image
-                className="dark:invert"
+                className="dark:invert "
                 src="/javalogo.svg"
                 alt="Logo1"
                 width={50}
                 height={50}
                 priority
+
             />
           </div>
           <div>
             <Image
-                className="dark:invert"
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
                 src="/pythonlogo.svg"
-                alt="Logo1"
-                width={50}
-                height={50}
+                alt="Logo2"
+                width={70}
+                height={70}
                 priority
+                onClick={()=>changeAbout("python")}
             />
           </div>
+        </div>
+
+        <div className="flex flex-row  items-end gap-4">
+
+          <Image
+              className="dark:invert flex-none "
+              src={aboutLogo}
+              alt="Logo1"
+              width={100}
+              height={100}
+              priority
+          />
+
+          <p className="flex-1 min-w-0 text-align-justify  text-sm  text-zinc-600 dark:text-zinc-400">
+            {aboutText}
+          </p>
 
         </div>
       </main>
     </div>
   );
 }
+
