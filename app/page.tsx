@@ -10,7 +10,7 @@ export default function Home() {
 
   function changeAbout(icon:string){
     const dict: {[key: string]: string[]} = {
-      java: ["Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java teacher at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before.","/javalogo.svg"],
+      java: ["Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before.","/javalogo.svg"],
       python: ["Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax.", "/pythonlogo.svg"]
     }
 
@@ -78,24 +78,25 @@ export default function Home() {
         </div>
 
         <div className="flex flex-row gap-4">
-          <div>
+          <div className="hover:bg-black/[.04]  p-2 rounded-full "
+               onClick={()=>changeAbout("java")}>
             <Image
-                className="dark:invert hover:bg-black/[.04] rounded-2xl"
+                className="dark:invert "
                 src="/javalogo.svg"
                 alt="Logo1"
                 width={50}
                 height={50}
                 priority
-                onClick={()=>changeAbout("java")}
+
             />
           </div>
           <div>
             <Image
-                className="dark:invert hover:bg-black/[.04] rounded-2xl"
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
                 src="/pythonlogo.svg"
                 alt="Logo2"
-                width={50}
-                height={50}
+                width={70}
+                height={70}
                 priority
                 onClick={()=>changeAbout("python")}
             />
