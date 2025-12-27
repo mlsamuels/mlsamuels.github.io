@@ -40,13 +40,13 @@ body {
 
   --m: 20; /*number of elements*/
   --d: 6.5em; /* image size */
-  --rel: 0; /* how much extra space we want between images, 1 = 1 image size */
-  --ba: 1turn/var(--m);  /* base angle = 1 full turn divided by number of edges */
-  /* (1 + var(--rel))*var(--d) = polygon edge = img size + extra space */
+  --rel: 0;
+  --ba: 1turn/var(--m);
   --r: calc(.5*(1 + var(--rel))*var(--d)/tan(.5*var(--ba))); /* circle radius */
   display: grid;
   width: calc(2*var(--r) + var(--d)); /* container size */
-  background: silver;
+
+
 }
 
 @property --t {
@@ -59,14 +59,11 @@ body {
   to   { --t: 20; }/*number of elements*/
 }
 
-@keyframes drop-shadow-add {
-  from {filter: drop-shadow(0px 0px 0px transparent); }
-  to   { filter: drop-shadow(500px 500px 500px transparent); }
-}
 
 .moving-element {
-
-  animation: countUp 200s  infinite linear, drop-shadow-add 2s forwards;
+  pointer-events: none;
+  outline: 100vmax solid transparent;
+  animation: countUp 200s  infinite linear;
   grid-area: 1/ 1;
   place-self: center;
   width: var(--d);
@@ -75,6 +72,10 @@ body {
           rotate(var(--ca))
           translate(var(--r))
           rotate(calc(-1*var(--ca)))
+}
+
+.moving-element img{
+  pointer-events: auto;
 }
 
 .center-element{
