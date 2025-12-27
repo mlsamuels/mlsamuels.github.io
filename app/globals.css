@@ -28,3 +28,51 @@ body {
 .text-align-justify {
   text-align: justify;
 }
+
+
+.circle-container {
+  aspect-ratio: 1;
+  --m: 6;
+  --d: 6.5em; /* image size */
+  --rel: 2.7; /* how much extra space we want between images, 1 = 1 image size */
+  --ba: 1turn/var(--m);  /* base angle = 1 full turn divided by number of edges */
+  /* (1 + var(--rel))*var(--d) = polygon edge = img size + extra space */
+  --r: calc(.5*(1 + var(--rel))*var(--d)/tan(.5*var(--ba))); /* circle radius */
+  display: grid;
+  width: calc(2*var(--r) + var(--d)); /* container size */
+  background: silver;
+}
+
+@property --t {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes countUp {
+  from { --t: 0; }
+  to   { --t: 6; }
+}
+
+.moving-element {
+  animation: countUp 2s  infinite linear;
+
+  grid-area: 1/ 1;
+  place-self: center;
+  width: var(--d);
+  --ca: calc((var(--i) + var(--t))*var(--ba));
+  transform:
+          rotate(var(--ca))
+          translate(var(--r))
+          rotate(calc(-1*var(--ca)))
+}
+
+.center-element{
+  grid-area: 1/ 1;
+  place-self: center;
+
+
+  transform:
+          rotate(var(--ca))
+          translate(var(--r))
+          rotate(calc(-1*var(--ca)))
+}
