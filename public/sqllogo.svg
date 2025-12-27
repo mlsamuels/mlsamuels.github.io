@@ -1,0 +1,21 @@
+<svg viewBox="0 0 236.66666666666666 240.83333333333337" xmlns="http://www.w3.org/2000/svg" style="max-height: 500px" width="236.66666666666666" height="240.83333333333337">
+<title>Sql data base with logo</title>
+<defs>
+<style type="text/css">
+#black {
+  fill:#333;
+}
+@media (prefers-color-scheme:dark) {
+    #black {
+        fill: white;
+    }
+} 	
+</style>
+</defs>
+
+<ellipse style="fill:none; stroke:#df6c20;stroke-width:15" rx="85" ry="35" cy="50" cx="120"/> 
+<path style="fill:none; stroke:#df6c20;stroke-width:15" d="m35,50 v150  a 85,35 1 1 0 170,0 v-150 m-170,50  a 85,35 1 1 0 170,0 m-170,50 a 85,35 1 1 0 170,0"/> 
+<path d="m300,100 a 25,25 1 1 0 -50,0 a 20,25 1 0 0 25,25 a 20,25 1 0 1 20,25 a 25,25 1 0 1 -50,-5" style="fill:none; stroke:#df6c20;stroke-width:15"/>
+<path d="m375,175 a 50,50 1 1 1 15,-5 m-15,-20 l30,40" style="fill:none; stroke:#df6c20;stroke-width:15"/>
+<path d="m440,70 v80  a 25,25 1 0 0 25,25 h20" style="fill:none; stroke:#df6c20;stroke-width:15"/>
+</svg>
