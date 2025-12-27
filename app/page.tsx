@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [aboutText, setAboutText] = useState("Click on the icons to learn more about my skills!")
-  const [aboutLogo, setAboutLogo] = useState("/favicon.ico")
+  const [aboutLogo, setAboutLogo] = useState("/accounticon.svg")
 
 
   function changeAbout(icon:string){
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
 
-          <div className="moving-element" style={{'--i': 1}as React.CSSProperties}>
+          <div className="moving-element" style={{'--i': 1, 'display': "block"}as React.CSSProperties}>
             <Image
                 className="hover:bg-black/[.04]  p-2 rounded-full dark:invert "
                 src="/javalogo.svg"
@@ -107,8 +107,205 @@ export default function Home() {
                 onClick={()=>changeAbout("java")}
             />
           </div>
-
-          <div className="moving-element" style={{'--i': 2}as React.CSSProperties}>
+          <div className="moving-element" style={{'--i': 2, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 3, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 4, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 5, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 6, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 7, 'display': "block"}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 8}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 9}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 10}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 11}as React.CSSProperties}>
+            <Image
+                className="hover:bg-black/[.04]  p-2 rounded-full dark:invert "
+                src="/javalogo.svg"
+                alt="Logo1"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("java")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 12}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 13}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 14}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 15}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 16}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 17}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 18}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 19}as React.CSSProperties}>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/pythonlogo.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                onClick={()=>changeAbout("python")}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 20}as React.CSSProperties}>
             <Image
                 className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
                 src="/pythonlogo.svg"

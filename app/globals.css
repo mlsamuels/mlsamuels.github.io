@@ -30,11 +30,17 @@ body {
 }
 
 
+
 .circle-container {
+  padding: calc(var(--d) * 0.5);
+  overflow: visible;
+
+  box-sizing: border-box;
   aspect-ratio: 1;
-  --m: 6;
+
+  --m: 20; /*number of elements*/
   --d: 6.5em; /* image size */
-  --rel: 2.7; /* how much extra space we want between images, 1 = 1 image size */
+  --rel: 0; /* how much extra space we want between images, 1 = 1 image size */
   --ba: 1turn/var(--m);  /* base angle = 1 full turn divided by number of edges */
   /* (1 + var(--rel))*var(--d) = polygon edge = img size + extra space */
   --r: calc(.5*(1 + var(--rel))*var(--d)/tan(.5*var(--ba))); /* circle radius */
@@ -50,12 +56,17 @@ body {
 }
 @keyframes countUp {
   from { --t: 0; }
-  to   { --t: 6; }
+  to   { --t: 20; }/*number of elements*/
+}
+
+@keyframes drop-shadow-add {
+  from {filter: drop-shadow(0px 0px 0px transparent); }
+  to   { filter: drop-shadow(500px 500px 500px transparent); }
 }
 
 .moving-element {
-  animation: countUp 2s  infinite linear;
 
+  animation: countUp 200s  infinite linear, drop-shadow-add 2s forwards;
   grid-area: 1/ 1;
   place-self: center;
   width: var(--d);
@@ -71,7 +82,7 @@ body {
   place-self: center;
 
 
-  transform:
+  transform: translateZ(0)
           rotate(var(--ca))
           translate(var(--r))
           rotate(calc(-1*var(--ca)))
