@@ -28,3 +28,69 @@ body {
 .text-align-justify {
   text-align: justify;
 }
+
+
+.circle-container {
+  position: relative;
+
+  overflow: visible;
+
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  margin: 0 auto;
+
+
+  --m: 20; /*number of elements*/
+  --d: 6.5em; /* image size */
+  --rel: 0;
+  --ba: 1turn/var(--m);
+  --r: calc(.5*(1 + var(--rel))*var(--d)/tan(.5*var(--ba))); /* circle radius */
+  display: grid;
+  place-items: center;
+  width: calc(2*var(--r) + var(--d)); /* container size */
+
+
+}
+
+@property --t {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes countUp {
+  from { --t: 0; }
+  to   { --t: 20; }/*number of elements*/
+}
+
+
+.moving-element {
+
+  margin-left: 30px;
+  pointer-events: none;
+  outline: 100vmax solid transparent;
+
+  animation: countUp 200s  infinite linear;
+  grid-area: 1/ 1;
+  place-self: center;
+  width: var(--d);
+  --ca: calc((var(--i) + var(--t))*var(--ba));
+  transform:
+          rotate(var(--ca))
+          translate(var(--r))
+          rotate(calc(-1*var(--ca)))
+}
+
+.moving-element img{
+  pointer-events: auto;
+}
+
+.center-element{
+  grid-area: 1/ 1;
+  place-self: center;
+
+
+  transform: translateZ(0)
+          rotate(var(--ca))
+          translate(var(--r))
+          rotate(calc(-1*var(--ca)))
+}

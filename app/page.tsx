@@ -1,28 +1,39 @@
 'use client';
 import Image from "next/image";
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect} from 'react';
 
 
 export default function Home() {
-  const [aboutText, setAboutText] = useState("hello")
-  const [aboutLogo, setAboutLogo] = useState("/favicon.ico")
+  const [aboutText, setAboutText] = useState("Click on the icons to learn more about my skills!")
+  const [aboutLogo, setAboutLogo] = useState("/accounticon.svg")
+  const scrollYRef = useRef(0);
 
 
   function changeAbout(icon:string){
+
     const dict: {[key: string]: string[]} = {
       java: ["Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before.","/javalogo.svg"],
-      python: ["Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax.", "/pythonlogo.svg"]
+      python: ["Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax.", "/pythonlogo.svg"],
+      placeholder: ["This is placeholder text!", "globe.svg"],
     }
 
+
     const dictResult:string[] = dict[icon];
-    setAboutText(dictResult[0])
-    setAboutLogo(dictResult[1])
+    setAboutText(dictResult[0]);
+    setAboutLogo(dictResult[1]);
+
+    //Save scroll
+    scrollYRef.current = window.scrollY;
   }
 
+  //Fixes scroll jump bug
+  useLayoutEffect(() => {
+    window.scrollTo(0, scrollYRef.current);
+  }, [aboutText]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col gap-6 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex min-h-screen w-full max-w-4xl flex-col gap-6 items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start">
         <div className="flex flex-row gap-2 items-center">
           <Image
           className="dark:invert  rounded-4xl "
@@ -39,7 +50,7 @@ export default function Home() {
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
 
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I'm Matt. I'm a computer scientist with a passion for problem solving. I'm always learning new skills to help me work through any obstacle I face.
+            I&#39;m Matt. I&#39;m a computer scientist with a passion for problem solving. I&#39;m always learning new skills to help me work through any obstacle I face.
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
@@ -77,20 +88,38 @@ export default function Home() {
 
         </div>
 
-        <div className="flex flex-row gap-4">
-          <div className="hover:bg-black/[.04]  p-2 rounded-full "
-               onClick={()=>changeAbout("java")}>
+
+          <div className="circle-container  rounded-full bg-zinc-100" >
+          <div className="center-element flex flex-row  items-center  justify-center gap-4">
             <Image
-                className="dark:invert "
+                className="dark:invert flex-none "
+                src={aboutLogo}
+                alt="Logo1"
+                width={100}
+                height={100}
+                priority
+            />
+
+            <p className="flex-1 min-w-0 text-align-justify  text-sm  text-zinc-600 dark:text-zinc-400 max-w-96">
+              {aboutText}
+            </p>
+
+          </div>
+
+
+          <div className="moving-element" style={{'--i': 1}as React.CSSProperties}>
+            <Image
+                className="hover:bg-black/[.04]  p-2 rounded-full dark:invert "
                 src="/javalogo.svg"
                 alt="Logo1"
-                width={50}
-                height={50}
+                width={70}
+                height={70}
                 priority
-
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("java");}}
             />
           </div>
-          <div>
+          <div className="moving-element" style={{'--i': 2}as React.CSSProperties }>
             <Image
                 className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
                 src="/pythonlogo.svg"
@@ -98,27 +127,233 @@ export default function Home() {
                 width={70}
                 height={70}
                 priority
-                onClick={()=>changeAbout("python")}
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("python");}}
             />
           </div>
+          <div className="moving-element" style={{'--i': 3}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 4}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 5}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 6}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 7}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 8}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 9}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 10}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 11}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 12}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 13}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 14}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 15}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 16}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 17}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 18}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 19}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 20}as React.CSSProperties }>
+            <Image
+                className="dark:invert p-2 hover:bg-black/[.04] rounded-full"
+                src="/globe.svg"
+                alt="Logo2"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+            />
+          </div>
+
+
+
         </div>
 
-        <div className="flex flex-row  items-end gap-4">
 
-          <Image
-              className="dark:invert flex-none "
-              src={aboutLogo}
-              alt="Logo1"
-              width={100}
-              height={100}
-              priority
-          />
 
-          <p className="flex-1 min-w-0 text-align-justify  text-sm  text-zinc-600 dark:text-zinc-400">
-            {aboutText}
-          </p>
-
-        </div>
       </main>
     </div>
   );
