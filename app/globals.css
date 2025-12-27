@@ -30,13 +30,15 @@ body {
 }
 
 
-
 .circle-container {
-  padding: calc(var(--d) * 0.5);
+  position: relative;
+
   overflow: visible;
 
   box-sizing: border-box;
   aspect-ratio: 1;
+  margin: 0 auto;
+
 
   --m: 20; /*number of elements*/
   --d: 6.5em; /* image size */
@@ -44,6 +46,7 @@ body {
   --ba: 1turn/var(--m);
   --r: calc(.5*(1 + var(--rel))*var(--d)/tan(.5*var(--ba))); /* circle radius */
   display: grid;
+  place-items: center;
   width: calc(2*var(--r) + var(--d)); /* container size */
 
 
@@ -61,8 +64,11 @@ body {
 
 
 .moving-element {
+
+  margin-left: 30px;
   pointer-events: none;
   outline: 100vmax solid transparent;
+
   animation: countUp 200s  infinite linear;
   grid-area: 1/ 1;
   place-self: center;
