@@ -28,7 +28,7 @@ export default function Home() {
       rust: ["/rustlogo.svg", "Placeholder!"],
       r: ["/rlogo.svg", "Placeholder!"],
       haskell: ["/haskelllogo.svg", "Placeholder!"],
-      matlab: ["/matlablogo3.png", "Placeholder!"],
+      matlab: ["/matlablogo.png", "Placeholder!"],
       excel: ["/excellogo.svg", "Placeholder!"],
       unity: ["/unitylogo.svg", "Placeholder!"],
 
@@ -321,7 +321,7 @@ export default function Home() {
           <div className="moving-element" style={{'--i': 17}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
-                src="/matlablogo3.png"
+                src="/matlablogo.png"
                 alt="Logo2"
                 width={70}
                 height={70}
