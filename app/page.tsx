@@ -14,14 +14,33 @@ export default function Home() {
     const dict: {[key: string]: string[]} = {
       java: ["/javalogo.svg", "Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before."],
       python: ["/pythonlogo.svg", "Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax."],
+      c: ["/clogo.svg", "C is the language I used in my systems classes. I've used it to make a virtual memory management unit. I particularly enjoy its closeness to assembly and getting to do interesting things with pointers."],
+      csharp: ["/csharplogo.svg", "C# was the first proper programming language I ever learned. Though it's extremely similar to java I still have a particular fondness for it. I've used it specifically with game development in unity where I coded custom mechanics and behaviors for the games I've made."],
+      racket: ["/racketlogo.svg", "Lisp, or more specifically Racket, was a language I used in my intro code course as well as in theoretical CS courses. I really appreciate the elegance and simplicity of the language. I also use Racket for making my schedules as I find it very convenient for programmatically editing images."],
+      sql: ["/sqllogo.svg", "Placeholder!"],
+      html: ["/htmllogo.svg", "Placeholder!"],
+      css: ["/csslogo.svg", "Placeholder!"],
+      javascript: ["/javascriptlogo.svg", "Placeholder!"],
+      react: ["/reactlogo.svg", "Placeholder!"],
+      aws: ["/awslogo.svg", "Placeholder!"],
+      github: ["/githublogo.svg", "Placeholder!"],
+      scala: ["/scalalogo.svg", "Placeholder!"],
+      rust: ["/rustlogo.svg", "Placeholder!"],
+      r: ["/rlogo.svg", "Placeholder!"],
+      haskell: ["/haskelllogo.svg", "Placeholder!"],
+      matlab: ["/matlablogo3.png", "Placeholder!"],
+      excel: ["/excellogo.svg", "Placeholder!"],
+      unity: ["/unitylogo.svg", "Placeholder!"],
+
       plus: ["/plussymbol.svg", "And more! This site is probably outdated because I'm always learning new things, and I'm never satisfied with what I know. There's so much knowledge out there and I love to learn and apply it. Perhaps one day this circle will need a second layer!"],
       placeholder: ["globe.svg", "This is placeholder text!"],
     }
 
 
     const dictResult:string[] = dict[icon];
-    setAboutText(dictResult[1]);
     setAboutLogo(dictResult[0]);
+    setAboutText(dictResult[1]);
+
 
     //Save scroll
     scrollYRef.current = window.scrollY;
@@ -34,8 +53,8 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-zinc-950">
-      <main className="flex min-h-screen w-full max-w-4xl flex-col gap-6 items-center  py-16 px-16 bg-white dark:bg-black sm:items-start">
-        <div className="flex flex-row gap-2 items-center">
+      <main className="flex min-h-screen w-full max-w-4xl flex-col gap-6 items-center  py-16  bg-white dark:bg-black sm:items-start">
+        <div className="px-16 flex flex-row gap-2 items-center">
           <Image
           className="  rounded-4xl "
           src="/photo.png"
@@ -48,13 +67,13 @@ export default function Home() {
             Matt Samuels
           </h1>
         </div>
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        <div className="px-16 flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
 
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             I&#39;m Matt. I&#39;m a computer scientist with a passion for problem solving. I&#39;m always learning new skills to help me work through any obstacle I face.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+        <div className="px-16 flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
             className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
             href="https://github.com/mlsamuels"
@@ -89,8 +108,7 @@ export default function Home() {
 
         </div>
 
-
-          <div className="circle-container  rounded-full bg-zinc-100 dark:bg-zinc-800" >
+        <div className="px-20 circle-container  rounded-full bg-zinc-100 dark:bg-zinc-800" >
           <div className="center-element flex flex-row  items-center  justify-center gap-4">
             <Image
                 className="flex-none "
@@ -141,7 +159,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("c");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 4}as React.CSSProperties }>
@@ -153,7 +171,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("csharp");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 5}as React.CSSProperties }>
@@ -165,7 +183,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("racket");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 6}as React.CSSProperties }>
@@ -177,7 +195,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("sql");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 7}as React.CSSProperties }>
@@ -189,7 +207,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("html");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 8}as React.CSSProperties }>
@@ -201,19 +219,19 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("css");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 9}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
                 src="/javascriptlogo.svg"
-                alt="Logo2"
+                alt="Logo9"
                 width={70}
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("javascript");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 10}as React.CSSProperties }>
@@ -225,7 +243,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("react");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 11}as React.CSSProperties }>
@@ -237,7 +255,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("aws");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 12}as React.CSSProperties }>
@@ -249,7 +267,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("github");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 13}as React.CSSProperties }>
@@ -261,7 +279,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("scala");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 14}as React.CSSProperties }>
@@ -273,7 +291,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("rust");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 15}as React.CSSProperties }>
@@ -285,7 +303,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("r");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 16}as React.CSSProperties }>
@@ -297,19 +315,19 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("haskell");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 17}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
-                src="/matlablogo.png"
+                src="/matlablogo3.png"
                 alt="Logo2"
                 width={70}
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("matlab");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 18}as React.CSSProperties }>
@@ -321,7 +339,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("excel");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 19}as React.CSSProperties }>
@@ -333,7 +351,7 @@ export default function Home() {
                 height={70}
                 priority
                 tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("placeholder");}}
+                onClick={(e)=>{e.preventDefault(); changeAbout("unity");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 20}as React.CSSProperties }>
