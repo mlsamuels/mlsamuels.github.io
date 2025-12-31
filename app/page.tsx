@@ -6,6 +6,7 @@ import { useState, useRef, useLayoutEffect} from 'react';
 export default function Home() {
   const [aboutText, setAboutText] = useState("Click on the icons to learn more about my skills!")
   const [aboutLogo, setAboutLogo] = useState("/accounticon.svg")
+  const [aboutInvert, setAboutInvert] = useState("")
   const scrollYRef = useRef(0);
 
 
@@ -40,6 +41,10 @@ export default function Home() {
     const dictResult:string[] = dict[icon];
     setAboutLogo(dictResult[0]);
     setAboutText(dictResult[1]);
+    setAboutInvert(" ");
+    if(icon=="github"){
+      setAboutInvert("dark:invert ")
+    }
 
 
     //Save scroll
@@ -109,9 +114,9 @@ export default function Home() {
         </div>
 
         <div className="px-20 circle-container  rounded-full bg-zinc-100 dark:bg-zinc-800" >
-          <div className="center-element flex flex-row  items-center  justify-center gap-4">
+          <div className=" center-element flex flex-row  items-center  justify-center gap-4">
             <Image
-                className="flex-none "
+                className={aboutInvert+" flex-none "}
                 src={aboutLogo}
                 alt="Logo1"
                 width={100}
