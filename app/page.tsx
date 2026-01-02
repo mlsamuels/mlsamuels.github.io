@@ -30,8 +30,8 @@ export default function Home() {
       matlab: ["/matlablogo.png", "I've used MatLab in most of my math courses. It's been an incredibly useful tool for mathematical computation and visualization. I've found it particularly helpful with automating tedious homework problems."],
       r: ["/rlogo.svg", "I used R in my statistics course, the language is very similar to MatLab so I picked it up quickly."],
       haskell: ["/haskelllogo.svg", "I learned some Haskell in my free time. I don't have much experience with the language but I really liked its lazy evaluation and pattern matching."],
-      excel: ["/excellogo.svg", "Placeholder!"],
-      unity: ["/unitylogo.svg", "Placeholder!"],
+      excel: ["/excellogo.svg", "I took a class that used Excel heavily in high school and since then I've used it whenever I need to quickly operate on data. Excel is an incredibly strong tool and I've found uses for it from doing simple calculations to organizing pairings between instructors and students at my Summer Camp job."],
+      unity: ["/unitylogo.svg", "I have extensive experience in Unity, having spent several years designing video games with it. My most popular Unity game has garnered over 40,000 plays online. While I haven't developed any games recently, my experience with Unity has made other similar softwares more accessible to me."],
       plus: ["/plussymbol.svg", "And more! This site is probably outdated because I'm always learning new things, and I'm never satisfied with what I know. There's so much knowledge out there and I love to learn and apply it. Perhaps one day this circle will need a second layer!"],
       placeholder: ["globe.svg", "This is placeholder text!"],
     }
@@ -108,6 +108,23 @@ export default function Home() {
                 height={20}
             />
             LinkedIn
+          </a>
+
+
+          <a
+              className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent bg-[#5AC54F] hover:bg-[#33984B] dark:border-white/[.145]  md:w-[158px]"
+              href="https://www.newgrounds.com/portal/view/841472"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <Image
+                className=""
+                src="/acehead.svg"
+                alt="Ace Head"
+                width={30}
+                height={30}
+            />
+            Acend
           </a>
 
         </div>
@@ -374,8 +391,6 @@ export default function Home() {
 
 
         </div>
-
-
 
       </main>
     </div>
