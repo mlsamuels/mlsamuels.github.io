@@ -110,6 +110,22 @@ export default function Home() {
             LinkedIn
           </a>
 
+          <a
+              className="flex h-12 w-full items-center gap-2 justify-center rounded-full bg-zinc-100 border border-solid  border-black/[.1] px-5 transition-colors hover:border-transparent hover:bg-black/[.1] dark:bg-zinc-900 dark:border-white/[.2] dark:hover:bg-white/[.2] md:w-[158px]"
+              href="/Resume_MatthewSamuels.pdf"
+              target="_blank"
+              download
+              rel="noopener noreferrer"
+          >
+            <Image
+                className=" "
+                src="/file.svg"
+                alt="File Logo"
+                width={20}
+                height={20}
+            />
+            Resume
+          </a>
 
           <a
               className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent bg-[#5AC54F] hover:bg-[#33984B] dark:border-white/[.145]  md:w-[158px]"
