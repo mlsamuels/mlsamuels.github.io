@@ -13,26 +13,25 @@ export default function Home() {
   function changeAbout(icon:string){
 
     const dict: {[key: string]: string[]} = {
-      java: ["/javalogo.svg", "Java is the language I have the most experience in. It's the main language used in my classes and the language I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before."],
+      java: ["/javalogo.svg", "Java is the language I have the most experience in. It's the main language used in my classes and the one I'm most equipped to teach. I have created hundreds of projects in Java and have an intuitive understanding of its syntax. I was the lead Java instructor at SummerTech, where I taught java skills to the other teachers. I was the person who would fix problems no one else could. Because of my experience I can solve most java bugs quickly as I've seen them before."],
       python: ["/pythonlogo.svg", "Python is one of my most used languages. I have extensive experience both using and teaching it. I'm also familiar with several libraries and frameworks such as Numpy, Pandas, TensorFlow, Pytorch, and Keras. Python is one of my favorite languages because of its ease of access and concise syntax."],
       c: ["/clogo.svg", "C is the language I used in my systems classes. I've used it to make a virtual memory management unit. I particularly enjoy its closeness to assembly and getting to do interesting things with pointers."],
-      csharp: ["/csharplogo.svg", "C# was the first proper programming language I ever learned. Though it's extremely similar to java I still have a particular fondness for it. I've used it specifically with game development in unity where I coded custom mechanics and behaviors for the games I've made."],
+      csharp: ["/csharplogo.svg", "C# was the first proper programming language I ever learned. Though it's extremely similar to java I still have a particular fondness for it. I've used it specifically with game development in Unity where I coded custom mechanics and behaviors for the games I've made."],
       racket: ["/racketlogo.svg", "Lisp, or more specifically Racket, was a language I used in my intro code course as well as in theoretical CS courses. I really appreciate the elegance and simplicity of the language. I also use Racket for making my schedules as I find it very convenient for programmatically editing images."],
-      sql: ["/sqllogo.svg", "Placeholder!"],
-      html: ["/htmllogo.svg", "Placeholder!"],
-      css: ["/csslogo.svg", "Placeholder!"],
-      javascript: ["/javascriptlogo.svg", "Placeholder!"],
-      react: ["/reactlogo.svg", "Placeholder!"],
-      aws: ["/awslogo.svg", "Placeholder!"],
-      github: ["/githublogo.svg", "Placeholder!"],
-      scala: ["/scalalogo.svg", "Placeholder!"],
-      rust: ["/rustlogo.svg", "Placeholder!"],
-      r: ["/rlogo.svg", "Placeholder!"],
-      haskell: ["/haskelllogo.svg", "Placeholder!"],
-      matlab: ["/matlablogo.png", "Placeholder!"],
+      sql: ["/sqllogo.svg", "I gained experience using SQL and databases in classes such as 'Database Systems' and 'Software Engineering'. Now that I have some knowledge of it, I'd love the chance to build database experience within a professional context."],
+      html: ["/htmllogo.svg", "After teaching HTML to myself using a free online course, I used it extensively in my software engineering classes. I also used HTML to make this website."],
+      css: ["/csslogo.svg", "My experience with CSS goes hand in hand with my experience with HTML. I'm particularly proud of the CSS that went into this site, where it was used to make this wheel. It was a very fun problem to work on and satisfying to go from an idea to an implementation."],
+      javascript: ["/javascriptlogo.svg", "I first interacted with JavaScript when I learned web development. It's similar in syntax to other languages I'm familiar with so I picked it up quickly. I learned TypeScript later in my software engineering classes. I've also used JavaScript when messing around with a website called Dwitter.net, where I used it to make tiny art demos"],
+      react: ["/reactlogo.svg", "I learned React after I learned web development, so I have experience both with and without it. In this website, react was used to update the image and text at the center of the wheel."],
+      aws: ["/awslogo.svg", "I used some Amazon Web Services during my software engineering class, specifically Lambda, S3, and API Gateway."],
+      github: ["/githublogo.svg", "I've become familiar with GitHub throughout my Computer Science career. I have foundational git knowledge and am familiar with a traditional workflow."],
+      scala: ["/scalalogo.svg", "I used Scala on my MQP, my final major project at WPI. In that project, my team and I developed a meta model to represent dynamic programming problem and used a scala framework to generate solutions."],
+      rust: ["/rustlogo.svg", "I used Rust in my programming languages course. I enjoyed the speed, efficiency, and safety of the language."],
+      matlab: ["/matlablogo.png", "I've used MatLab in most of my math courses. It's been an incredibly useful tool for mathematical computation and visualization. I've found it particularly helpful with automating tedious homework problems."],
+      r: ["/rlogo.svg", "I used R in my statistics course, the language is very similar to MatLab so I picked it up quickly."],
+      haskell: ["/haskelllogo.svg", "I learned some Haskell in my free time. I don't have much experience with the language but I really liked its lazy evaluation and pattern matching."],
       excel: ["/excellogo.svg", "Placeholder!"],
       unity: ["/unitylogo.svg", "Placeholder!"],
-
       plus: ["/plussymbol.svg", "And more! This site is probably outdated because I'm always learning new things, and I'm never satisfied with what I know. There's so much knowledge out there and I love to learn and apply it. Perhaps one day this circle will need a second layer!"],
       placeholder: ["globe.svg", "This is placeholder text!"],
     }
@@ -75,7 +74,7 @@ export default function Home() {
         <div className="px-16 flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
 
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I&#39;m Matt. I&#39;m a computer scientist with a passion for problem solving. I&#39;m always learning new skills to help me work through any obstacle I face.
+            I&#39;m a computer scientist with a passion for problem solving. I&#39;m always learning new skills to help me work through any obstacle I face.
           </p>
         </div>
         <div className="px-16 flex flex-col gap-4 text-base font-medium sm:flex-row">
@@ -302,8 +301,20 @@ export default function Home() {
           <div className="moving-element" style={{'--i': 15}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
+                src="/matlablogo.png"
+                alt="Logo15"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("matlab");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 16}as React.CSSProperties }>
+            <Image
+                className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
                 src="/rlogo.svg"
-                alt="Logo2"
+                alt="Logo16"
                 width={70}
                 height={70}
                 priority
@@ -311,28 +322,16 @@ export default function Home() {
                 onClick={(e)=>{e.preventDefault(); changeAbout("r");}}
             />
           </div>
-          <div className="moving-element" style={{'--i': 16}as React.CSSProperties }>
+          <div className="moving-element" style={{'--i': 17}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
                 src="/haskelllogo.svg"
-                alt="Logo2"
+                alt="Logo17"
                 width={70}
                 height={70}
                 priority
                 tabIndex={-1}
                 onClick={(e)=>{e.preventDefault(); changeAbout("haskell");}}
-            />
-          </div>
-          <div className="moving-element" style={{'--i': 17}as React.CSSProperties }>
-            <Image
-                className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
-                src="/matlablogo.png"
-                alt="Logo2"
-                width={70}
-                height={70}
-                priority
-                tabIndex={-1}
-                onClick={(e)=>{e.preventDefault(); changeAbout("matlab");}}
             />
           </div>
           <div className="moving-element" style={{'--i': 18}as React.CSSProperties }>
