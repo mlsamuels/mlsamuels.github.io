@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-zinc-950">
       <main className="flex min-h-screen w-full max-w-4xl flex-col gap-6 items-center  py-16  bg-white dark:bg-black sm:items-start">
-        <div className="px-16 flex flex-row gap-2 items-center">
+        <section className="px-16 flex flex-row gap-2 items-center">
           <Image
           className="  rounded-4xl "
           src="/photo.png"
@@ -70,14 +70,16 @@ export default function Home() {
           <h1 className=" max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             Matt Samuels
           </h1>
-        </div>
-        <div className="px-16 flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+        </section>
+
+        <section className="px-16 flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
 
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             I&#39;m a computer scientist with a passion for problem solving. I&#39;m always learning new skills to help me work through any obstacle I face.
           </p>
-        </div>
-        <div className="px-16 flex flex-col gap-4 text-base font-medium sm:flex-row">
+        </section>
+
+        <section className="px-16 flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
             className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
             href="https://github.com/mlsamuels"
@@ -143,9 +145,9 @@ export default function Home() {
             Acend
           </a>
 
-        </div>
+        </section>
 
-        <div className="px-20 circle-container  rounded-full bg-zinc-100 dark:bg-zinc-800" >
+        <section className="px-20 circle-container  rounded-full bg-zinc-100 dark:bg-zinc-800" >
           <div className=" center-element flex flex-row  items-center  justify-center gap-4">
             <Image
                 className={aboutInvert+" flex-none "}
@@ -406,7 +408,7 @@ export default function Home() {
 
 
 
-        </div>
+        </section>
 
       </main>
     </div>
