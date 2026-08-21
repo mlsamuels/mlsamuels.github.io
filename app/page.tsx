@@ -32,6 +32,8 @@ export default function Home() {
       haskell: ["/haskelllogo.svg", "I learned some Haskell in my free time. I don't have much experience with the language but I really liked its lazy evaluation and pattern matching."],
       excel: ["/excellogo.svg", "I took a class that used Excel heavily in high school and since then I've used it whenever I need to quickly operate on data. Excel is an incredibly strong tool and I've found uses for it from doing simple calculations to organizing pairings between instructors and students at my Summer Camp job."],
       unity: ["/unitylogo.svg", "I have extensive experience in Unity, having spent several years designing video games with it. My most popular Unity game has garnered over 40,000 plays online. While I haven't developed any games recently, my experience with Unity has made other similar softwares more accessible to me."],
+      docker: ["/dockerlogo.svg", "I use Docker on my website 'rundefined' to run arbitrary user code. By running code in an isolated Docker container I can execute code safely."],
+      raspberrypi: ["/raspberrypilogo.svg", "I use a Raspberry Pi 3 to host my website 'rundefined'. I use Raspberry Pi OS Lite so I can only access it using CLI."],
       plus: ["/plussymbol.svg", "And more! This site is probably outdated because I'm always learning new things, and I'm never satisfied with what I know. There's so much knowledge out there and I love to learn and apply it. Perhaps one day this circle will need a second layer!"],
       placeholder: ["globe.svg", "This is placeholder text!"],
     }
@@ -81,7 +83,7 @@ export default function Home() {
 
         <section className="px-16 flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[120px]"
             href="https://github.com/mlsamuels"
             target="_blank"
             rel="noopener noreferrer"
@@ -97,7 +99,7 @@ export default function Home() {
           </a>
 
           <a
-              className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+              className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[120px]"
               href="https://www.linkedin.com/in/matthew-samuels-843ba8321/"
               target="_blank"
               rel="noopener noreferrer"
@@ -113,7 +115,7 @@ export default function Home() {
           </a>
 
           <a
-              className="flex h-12 w-full items-center gap-2 justify-center rounded-full bg-zinc-100 border border-solid  border-black/[.1] px-5 transition-colors hover:border-transparent hover:bg-black/[.1] dark:bg-zinc-900 dark:border-white/[.2] dark:hover:bg-white/[.2] md:w-[158px]"
+              className="flex h-12 w-full items-center gap-2 justify-center rounded-full bg-zinc-100 border border-solid  border-black/[.1] px-5 transition-colors hover:border-transparent hover:bg-black/[.1] dark:bg-zinc-900 dark:border-white/[.2] dark:hover:bg-white/[.2] md:w-[120px]"
               href="/Resume_MatthewSamuels.pdf"
               target="_blank"
               download
@@ -130,7 +132,23 @@ export default function Home() {
           </a>
 
           <a
-              className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent bg-[#5AC54F] hover:bg-[#33984B] dark:border-white/[.145]  md:w-[158px]"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[150px]"
+              href="http://rundefined.ddns.net"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <Image
+                className="dark:invert"
+                src="/RD.svg"
+                alt="RD logo"
+                width={30}
+                height={30}
+            />
+            Rundefined
+          </a>
+
+          <a
+              className="flex h-12 w-full items-center gap-2 justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent bg-[#5AC54F] hover:bg-[#33984B] dark:border-white/[.145]  md:w-[120px]"
               href="https://www.newgrounds.com/portal/view/841472"
               target="_blank"
               rel="noopener noreferrer"
@@ -396,8 +414,32 @@ export default function Home() {
           <div className="moving-element" style={{'--i': 20}as React.CSSProperties }>
             <Image
                 className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
-                src="/plussymbol.svg"
+                src="/dockerlogo.svg"
                 alt="Logo20"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("docker");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 21}as React.CSSProperties }>
+            <Image
+                className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
+                src="/raspberrypilogo.svg"
+                alt="Logo21"
+                width={70}
+                height={70}
+                priority
+                tabIndex={-1}
+                onClick={(e)=>{e.preventDefault(); changeAbout("raspberrypi");}}
+            />
+          </div>
+          <div className="moving-element" style={{'--i': 22}as React.CSSProperties }>
+            <Image
+                className=" p-2 hover:bg-black/[.04] dark:hover:bg-white/[.04] rounded-full"
+                src="/plussymbol.svg"
+                alt="Logo22"
                 width={70}
                 height={70}
                 priority
@@ -405,7 +447,6 @@ export default function Home() {
                 onClick={(e)=>{e.preventDefault(); changeAbout("plus");}}
             />
           </div>
-
 
 
         </section>
