@@ -40,7 +40,7 @@ body {
   margin: 0 auto;
 
 
-  --m: 20; /*number of elements*/
+  --m: 22; /*number of elements*/
   --d: 6.5em; /* image size */
   --rel: 0;
   --ba: 1turn/var(--m);
@@ -59,7 +59,7 @@ body {
 }
 @keyframes countUp {
   from { --t: 0; }
-  to   { --t: 20; }/*number of elements*/
+  to   { --t: 22; }/*number of elements*/
 }
 
 
